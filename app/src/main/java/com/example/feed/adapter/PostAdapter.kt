@@ -9,7 +9,7 @@ import com.example.feed.databinding.PostItemCellBinding
 
 class PostAdapter(
     private val postList: ArrayList<PostData>,
-    internal val callBackIntent: (position: Int) -> Unit
+    internal val callBackIntent: (postData: PostData) -> Unit
 ) :
     RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
@@ -29,7 +29,7 @@ class PostAdapter(
             .into(holder.itemCell.ivUserImageTwo)
 
         holder.itemCell.root.setOnClickListener {
-            callBackIntent(holder.adapterPosition)
+            callBackIntent(postList[position])
         }
     }
 

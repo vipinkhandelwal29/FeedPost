@@ -6,10 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.feed.bean.Comment
 import com.example.feed.databinding.CommentItemCellBinding
 
-class CommentAdapter(
-    private val commentList: ArrayList<Comment>
-) :
+class CommentAdapter :
     RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
+    private var commentList: ArrayList<Comment> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {
         return CommentViewHolder(
@@ -20,6 +19,12 @@ class CommentAdapter(
     override fun onBindViewHolder(holder: CommentViewHolder, position: Int) {
         holder.itemCell.comment = this.commentList[position]
 
+    }
+
+    fun setComments(comments: ArrayList<Comment>) {
+        commentList.clear()
+        commentList.addAll(comments)
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = commentList.size

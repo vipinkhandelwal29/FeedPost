@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -18,11 +19,16 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/from"
             android:layout_width="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            tools:text="Vipin"
             android:layout_height="wrap_content"
             android:text="@{comment.from}" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/message"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            tools:text="message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{comment.message}" />
